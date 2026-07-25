@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>생일약 저널 · 본초 의학 이론과 글</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brandmark">
+      <span class="dot" aria-hidden="true"></span>
+      <span>생일약 저널</span>
+    </div>
+    <ul>
+      <li><a href="#philosophy" data-ko="쓰는 철학" data-en="Philosophy">쓰는 철학</a></li>
+      <li><a href="#blog" data-ko="글 모음" data-en="Articles">글 모음</a></li>
+      <li><a href="#contact" data-ko="문의" data-en="Contact">문의</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-cta" href="#contact" data-ko="문의하기" data-en="Contact Us">문의하기</a>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" id="lang-ko" class="active" aria-pressed="true">한국어</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-ko="전통 본초 의학 아카이브 · 본초원에서 씀" data-en="Traditional Herbal Medicine Writing · Written from Root Garden">Traditional Herbal Medicine Writing · 본초원에서 씀</span>
+      <h1 data-ko-html="흙에서 온 이야기,<br>몸에 맞는 <em>생일 약</em>의 이론" data-en-html="Stories from the earth,<br>theories of <em>Birthday Medicine</em>">흙에서 온 이야기,<br>몸에 맞는 <em>본초</em>의 이론</h1>
+      <p data-ko="'생일 의학(Birthday Medicine)'은 '점, 점, 점, 점'에 관한 이론입니다." data-en="Birthday Medicine is the theory of dot dot dot dot">생일약 저널은 전통 본초 의학의 이론과 임상 사례를 기록하고 나누는 글쓰기 공간입니다. 진료 현장에서 마주한 질문들을 급하지 않게, 뿌리부터 풀어 씁니다.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#blog" data-ko="최신 글 읽기" data-en="Read the Latest">최신 글 읽기</a>
+        <a class="btn ghost" href="#philosophy" data-ko="철학 살펴보기" data-en="Our Philosophy">철학 살펴보기</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="frame">
+        <img src="assets/img/logo-banner.png" loading="eager"
+             data-ko-alt="여기에 로고와 추가 정보를 입력하세요."
+             data-en-alt="input logo and more information here"
+             alt="생일약 저널 로고 — 먹으로 번진 흙빛 얼룩 위에 쓰인 브랜드 글자"
+             onerror="this.closest('.frame').style.background='var(--cream)'; this.remove();">
+      </div>
+      <div class="caption" data-ko="이주연의 글" data-en="The writing of JOO YEON LEE">먹, 흙, 뿌리 — 생일약의 글</div>
+    </div>
+  </div>
+
+  <div class="ink-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,40 C180,90 340,10 520,50 C700,90 860,20 1040,55 C1120,72 1160,60 1200,48 L1200,120 L0,120 Z" fill="#8B8478"/>
+    </svg>
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <div class="speckles" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="eyebrow" data-ko="쓰는 철학" data-en="Writing Philosophy">쓰는 철학</span>
+    <h2 data-ko="글은 강하게 결론짓는 것이 아니라, 흙처럼 천천히 스며들어 생각의 뿌리를 보여주는 것이라 믿습니다." data-en="We believe writing shouldn't cut to a sharp conclusion, but seep in slowly, like soil, revealing the roots of an idea.">글은 강하게 결론짓는 것이 아니라, 흙처럼 천천히 스며들어 생각의 뿌리를 보여주는 것이라 믿습니다.</h2>
+    <div class="principles">
+      <div class="principle">
+        <span class="glyph">根</span>
+        <h3 data-ko="뿌리부터 설명함" data-en="Root-first Explanation">뿌리부터 설명함</h3>
+        <p data-ko="증상만 다루지 않고, 이론의 배경과 맥락까지 짚어가며 글의 뿌리를 보여줍니다." data-en="We don't stop at symptoms — we trace each theory back to its background and context.">증상만 다루지 않고, 이론의 배경과 맥락까지 짚어가며 글의 뿌리를 보여줍니다.</p>
+      </div>
+      <div class="principle">
+        <span class="glyph">土</span>
+        <h3 data-ko="현장에서 얻은 기록" data-en="Notes from the Field">현장에서 얻은 기록</h3>
+        <p data-ko="진료 현장에서 마주한 사례를 계절처럼 꾸준히 기록해, 이론이 실제로 스며드는 과정을 보여줍니다." data-en="We record cases from clinical practice as steadily as the seasons turn, showing how theory actually seeps into the real world.">진료 현장에서 마주한 사례를 계절처럼 꾸준히 기록해, 이론이 실제로 스며드는 과정을 보여줍니다.</p>
+      </div>
+      <div class="principle">
+        <span class="glyph">和</span>
+        <h3 data-ko="다른 관점을 함께 다룸" data-en="Room for Other Views">다른 관점을 함께 다룸</h3>
+        <p data-ko="같은 주제라도 여러 학파와 시각을 함께 짚어, 어느 한쪽으로 치우치지 않는 이해를 돕는 것을 원칙으로 합니다." data-en="Even the same topic calls for more than one school of thought — that's our principle of giving readers a balanced, unhurried understanding.">같은 주제라도 여러 학파와 시각을 함께 짚어, 어느 한쪽으로 치우치지 않는 이해를 돕는 것을 원칙으로 합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-ko="글 모음" data-en="Articles">글 모음</span>
+        <h2 data-ko="생일약 저널의 글들" data-en="Articles from the Journal">생일약 저널의 글들</h2>
+      </div>
+      <p data-ko="체질과 증상에 따라 나눈 이론 갈래별로, 관리자가 꾸준히 새 글을 더해갑니다." data-en="Organized by theory branch — new articles are added here regularly by the admin.">체질과 증상에 따라 나눈 이론 갈래별로, 관리자가 꾸준히 새 글을 더해갑니다.</p>
+    </div>
+    <div class="blog-filters" id="blog-filters"></div>
+    <div class="jar-grid" id="blog-grid"></div>
+    <div class="blog-more" id="blog-more"></div>
+  </div>
+</section>
+
+<section class="visit" id="contact">
+  <div class="speckles" aria-hidden="true"></div>
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow" data-ko="문의" data-en="Contact">문의</span>
+      <h2 data-ko="글에 대한 이야기를 나누고 싶다면" data-en="If you'd like to talk about the writing">글에 대한 이야기를 나누고 싶다면</h2>
+      <p data-ko="오탈자 제보, 이론에 대한 이견, 다루었으면 하는 주제까지 무엇이든 편하게 남겨주세요." data-en="Typo reports, disagreements with a theory, or a topic you'd like us to cover — feel free to reach out about any of it.">오탈자 제보, 이론에 대한 이견, 다루었으면 하는 주제까지 무엇이든 편하게 남겨주세요.</p>
+      <dl>
+        <div><dt data-ko="이메일" data-en="Email">이메일</dt><dd>kj9906@naver.com</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span data-ko="© 2026 생일약 저널. 흙과 뿌리에서 온 글." data-en="© 2026 Saengilyak Journal. Writing from earth and root.">© 2026 생일약 저널. 흙과 뿌리에서 온 글.</span>
+  <span class="footer-links">
+    <span data-ko="격주 화요일, 이론과 사례로 씁니다" data-en="Every other Tuesday, written in theory and case">격주 화요일, 이론과 사례로 씁니다</span>
+    <a href="admin.html" data-ko="관리자" data-en="Admin">관리자</a>
+  </span>
+</footer>
+
+<script src="assets/js/common.js"></script>
+<script src="assets/js/blog.js"></script>
+</body>
+</html>

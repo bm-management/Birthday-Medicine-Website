@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "slug": "testing-3",
+      "category": "feeling ill",
+      "category_en": "",
+      "title": "testing 3",
+      "title_en": "",
+      "excerpt": "3333333333333",
+      "excerpt_en": "",
+      "content": "33333testing",
+      "content_en": "",
+      "date": "2026-07-25",
+      "author": "이주연"
+    },
+    {
+      "slug": "stomach-hurt",
+      "category": "aching",
+      "category_en": "",
+      "title": "stomach hurt",
+      "title_en": "",
+      "excerpt": "ahhhh",
+      "excerpt_en": "",
+      "content": "ahhhhh",
+      "content_en": "",
+      "date": "2026-07-25",
+      "author": "이주연"
+    }
+  ]
+}
