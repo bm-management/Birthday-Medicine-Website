@@ -2,7 +2,7 @@
   // Soft client-side gate only — this does NOT secure the content, it just
   // keeps casual visitors off the editing screen. Change ADMIN_PASSWORD below
   // to whatever you like; anyone who reads this file can still see it.
-  var ADMIN_PASSWORD = 'saengil2026';
+  var ADMIN_PASSWORD = 'testingpasscode123';
 
   var workingPosts = [];
   var editingSlug = null; // null = creating a new post
