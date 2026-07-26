@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>관리자 · 생일약 저널</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brandmark" href="index.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span>생일약 저널</span>
+    </a>
+    <ul></ul>
+    <div class="nav-right">
+      <a class="nav-cta" href="index.html" data-ko="사이트로 돌아가기" data-en="Back to Site">사이트로 돌아가기</a>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" id="lang-ko" class="active" aria-pressed="true">한국어</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div id="admin-gate" class="admin-gate">
+  <h2 data-ko="관리자 로그인" data-en="Admin Login">관리자 로그인</h2>
+  <p data-ko="글을 작성하거나 수정하려면 비밀번호를 입력하세요." data-en="Enter the password to write or edit articles.">글을 작성하거나 수정하려면 비밀번호를 입력하세요.</p>
+  <input type="password" id="gate-password" placeholder="비밀번호" data-ko-placeholder="비밀번호" data-en-placeholder="Password">
+  <div class="error" id="gate-error" data-ko="비밀번호가 올바르지 않습니다." data-en="Incorrect password.">비밀번호가 올바르지 않습니다.</div>
+  <button type="button" class="btn" id="gate-submit" style="width:100%;" data-ko="입장하기" data-en="Enter">입장하기</button>
+</div>
+
+<div id="admin-panel-wrap" style="display:none;">
+  <section class="admin-shell">
+    <div class="wrap">
+      <div class="admin-note">
+        <strong data-ko="알아두기" data-en="Note">알아두기</strong>
+        <span data-ko="— 이 사이트는 정적(static) 사이트입니다. 아래에서 글을 작성한 뒤"
+              data-en="— This is a static site. After writing an article below,">— 이 사이트는 정적(static) 사이트입니다. 아래에서 글을 작성한 뒤</span>
+        <strong data-ko="&quot;posts.json 다운로드&quot;" data-en="&quot;Download posts.json&quot;">"posts.json 다운로드"</strong>
+        <span data-ko="버튼을 눌러 파일을 내려받고, website 폴더 안의"
+              data-en="click the button to download the file, and replace the">버튼을 눌러 파일을 내려받고, website 폴더 안의</span>
+        <code>posts.json</code>
+        <span data-ko="파일을 그 파일로 교체해야 실제 방문자에게 글이 보입니다 (호스팅 중이라면 교체 후 다시 업로드/배포하세요)."
+              data-en="file inside the website folder with it — that's what makes the article visible to real visitors (if hosted, re-upload/redeploy after replacing it).">파일을 그 파일로 교체해야 실제 방문자에게 글이 보입니다 (호스팅 중이라면 교체 후 다시 업로드/배포하세요).</span>
+      </div>
+
+      <div class="admin-grid">
+        <div class="admin-panel">
+          <h2 id="form-title" data-ko="새 글 작성" data-en="Write a New Article">새 글 작성</h2>
+          <p class="hint" data-ko="한국어 내용은 필수이며, 영어는 선택 사항입니다. 비워두면 언어 전환 시 한국어가 대신 표시됩니다."
+             data-en="Korean content is required; English is optional. If left blank, Korean will be shown instead when the site is switched to English.">한국어 내용은 필수이며, 영어는 선택 사항입니다. 비워두면 언어 전환 시 한국어가 대신 표시됩니다.</p>
+
+          <form id="post-form">
+            <div class="field-row">
+              <div class="field">
+                <label for="field-category-ko" data-ko="갈래 (한국어)" data-en="Category (Korean)">갈래 (한국어)</label>
+                <input type="text" id="field-category-ko" placeholder="예: 소화·비위" data-ko-placeholder="예: 소화·비위" data-en-placeholder="e.g. Digestion · Stomach" required>
+              </div>
+              <div class="field">
+                <label for="field-category-en" data-ko="갈래 (영어, 선택)" data-en="Category (English, optional)">갈래 (영어, 선택)</label>
+                <input type="text" id="field-category-en" placeholder="e.g. Digestion · Stomach">
+              </div>
+            </div>
+
+            <div class="lang-tabs">
+              <button type="button" data-lang="ko" class="active" data-ko="한국어 내용" data-en="Korean Content">한국어 내용</button>
+              <button type="button" data-lang="en" data-ko="영어 내용 (선택)" data-en="English Content (optional)">영어 내용 (선택)</button>
+            </div>
+
+            <div class="lang-fields active" data-lang="ko">
+              <div class="field">
+                <label for="field-title-ko" data-ko="제목" data-en="Title">제목</label>
+                <input type="text" id="field-title-ko" required>
+              </div>
+              <div class="field">
+                <label for="field-excerpt-ko" data-ko="요약 (목록 카드에 표시)" data-en="Excerpt (shown on the article card)">요약 (목록 카드에 표시)</label>
+                <textarea id="field-excerpt-ko" required></textarea>
+              </div>
+              <div class="field">
+                <label for="field-content-ko" data-ko="본문" data-en="Body">본문</label>
+                <textarea id="field-content-ko" style="min-height:220px;" required></textarea>
+                <small data-ko="빈 줄로 문단을 구분하세요. 자동으로 문단(문단 나눔)으로 표시됩니다."
+                       data-en="Separate paragraphs with a blank line — they'll be shown as separate paragraphs automatically.">빈 줄로 문단을 구분하세요. 자동으로 문단(문단 나눔)으로 표시됩니다.</small>
+              </div>
+            </div>
+
+            <div class="lang-fields" data-lang="en">
+              <div class="field">
+                <label for="field-title-en" data-ko="제목 (영어)" data-en="Title">Title</label>
+                <input type="text" id="field-title-en">
+              </div>
+              <div class="field">
+                <label for="field-excerpt-en" data-ko="요약 (영어)" data-en="Excerpt">Excerpt</label>
+                <textarea id="field-excerpt-en"></textarea>
+              </div>
+              <div class="field">
+                <label for="field-content-en" data-ko="본문 (영어)" data-en="Body">Body</label>
+                <textarea id="field-content-en" style="min-height:220px;"></textarea>
+                <small data-ko="빈 줄로 문단을 구분하세요." data-en="Separate paragraphs with a blank line.">Separate paragraphs with a blank line.</small>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="field-date" data-ko="날짜" data-en="Date">날짜</label>
+                <input type="date" id="field-date">
+              </div>
+              <div class="field">
+                <label for="field-author" data-ko="글쓴이" data-en="Author">글쓴이</label>
+                <input type="text" id="field-author" placeholder="이주연">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="field-slug" data-ko="주소 (슬러그, 영문/숫자/하이픈)" data-en="URL slug (letters, numbers, hyphens)">주소 (슬러그, 영문/숫자/하이픈)</label>
+              <input type="text" id="field-slug" placeholder="비워두면 자동 생성됩니다 (예: warmth-and-digestion)"
+                     data-ko-placeholder="비워두면 자동 생성됩니다 (예: warmth-and-digestion)"
+                     data-en-placeholder="Auto-generated if left blank (e.g. warmth-and-digestion)">
+              <small data-ko="이 값이 글 주소가 됩니다: post.html?slug=여기" data-en="This becomes the article's URL: post.html?slug=this-value">이 값이 글 주소가 됩니다: post.html?slug=여기</small>
+            </div>
+
+            <div class="admin-actions">
+              <button type="submit" class="btn" data-ko="저장하기" data-en="Save">저장하기</button>
+              <button type="button" class="btn ghost" id="cancel-edit" style="display:none;" data-ko="수정 취소" data-en="Cancel Edit">수정 취소</button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <details class="github-settings" id="github-settings">
+            <summary data-ko="GitHub 자동 게시 설정" data-en="GitHub Auto-Publish Setup">GitHub 자동 게시 설정</summary>
+            <div class="github-settings-body">
+              <p class="hint" data-ko="한 번만 설정하면 이후에는 '지금 게시하기' 버튼으로 바로 GitHub 저장소에 반영됩니다. 토큰은 이 브라우저에만 저장되며, 다른 사람과 공유하는 컴퓨터에서는 사용하지 마세요."
+                 data-en="Set this up once, and after that the &quot;Publish Now&quot; button pushes straight to your GitHub repo. The token is stored only in this browser — don't use it on a shared computer.">한 번만 설정하면 이후에는 '지금 게시하기' 버튼으로 바로 GitHub 저장소에 반영됩니다. 토큰은 이 브라우저에만 저장되며, 다른 사람과 공유하는 컴퓨터에서는 사용하지 마세요.</p>
+              <div class="field-row">
+                <div class="field">
+                  <label for="gh-owner" data-ko="GitHub 사용자명" data-en="GitHub Username">GitHub 사용자명</label>
+                  <input type="text" id="gh-owner" placeholder="e.g. augustonman">
+                </div>
+                <div class="field">
+                  <label for="gh-repo" data-ko="저장소 이름" data-en="Repository Name">저장소 이름</label>
+                  <input type="text" id="gh-repo" placeholder="e.g. birthday-medicine-website">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="gh-branch" data-ko="브랜치" data-en="Branch">브랜치</label>
+                  <input type="text" id="gh-branch" placeholder="main" value="main">
+                </div>
+                <div class="field">
+                  <label for="gh-token" data-ko="Personal Access Token" data-en="Personal Access Token">Personal Access Token</label>
+                  <input type="password" id="gh-token" placeholder="ghp_..." autocomplete="off">
+                </div>
+              </div>
+              <p class="hint" style="margin-bottom:14px;" data-ko="이 저장소의 Contents 읽기/쓰기 권한만 있는 fine-grained 토큰을 만들어 사용하세요: github.com/settings/personal-access-tokens/new"
+                 data-en="Create a fine-grained token scoped to only this repo's Contents read/write permission: github.com/settings/personal-access-tokens/new">이 저장소의 Contents 읽기/쓰기 권한만 있는 fine-grained 토큰을 만들어 사용하세요: github.com/settings/personal-access-tokens/new</p>
+              <div class="admin-actions" style="margin-bottom:14px;">
+                <button type="button" class="btn small" id="gh-save-settings" data-ko="설정 저장" data-en="Save Settings">설정 저장</button>
+                <button type="button" class="btn ghost small" id="gh-clear-token" data-ko="토큰 삭제" data-en="Forget Token">토큰 삭제</button>
+              </div>
+              <div id="gh-status" class="gh-status" data-ko="아직 설정되지 않음" data-en="Not configured yet">아직 설정되지 않음</div>
+            </div>
+          </details>
+
+          <h2 style="margin-bottom:6px; margin-top:32px;" data-ko="발행된 글" data-en="Published Articles">발행된 글</h2>
+          <p class="hint" style="color:var(--stone-dk); font-size:0.86rem; margin-bottom:20px;"
+             data-ko="'지금 게시하기'는 GitHub에 바로 반영됩니다. GitHub을 연결하지 않았다면 posts.json을 내려받아 직접 교체하세요."
+             data-en="&quot;Publish Now&quot; pushes straight to GitHub. If you haven't connected GitHub, download posts.json and replace it yourself instead.">'지금 게시하기'는 GitHub에 바로 반영됩니다. GitHub을 연결하지 않았다면 posts.json을 내려받아 직접 교체하세요.</p>
+          <div class="admin-actions" style="margin-bottom:24px;">
+            <button type="button" class="btn" id="publish-github" data-ko="지금 게시하기" data-en="Publish Now">지금 게시하기</button>
+            <button type="button" class="btn ghost small" id="download-json" data-ko="posts.json 다운로드" data-en="Download posts.json">posts.json 다운로드</button>
+            <button type="button" class="btn ghost small" id="copy-json" data-ko="JSON 복사" data-en="Copy JSON">JSON 복사</button>
+          </div>
+          <div class="admin-list" id="admin-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/common.js"></script>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>
