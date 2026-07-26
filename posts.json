@@ -25,6 +25,19 @@
       "content_en": "",
       "date": "2026-07-25",
       "author": "이주연"
+    },
+    {
+      "slug": "testing-publish-posts",
+      "category": "testing",
+      "category_en": "",
+      "title": "testing publish posts",
+      "title_en": "",
+      "excerpt": "test",
+      "excerpt_en": "",
+      "content": "test",
+      "content_en": "",
+      "date": "2026-07-26",
+      "author": "이주연"
     }
   ]
 }
